@@ -1,0 +1,22 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://Backgrounds/DUMMY_Gasstation.png" type="Texture" id=1]
+[ext_resource path="res://Player.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Assetts/DUMMY_sheepstand.png" type="Texture" id=3]
+
+[node name="Node2D" type="Node2D"]
+
+[node name="DUMMY_Gasstation" type="Sprite" parent="."]
+position = Vector2( 25, 25 )
+scale = Vector2( 1.5, 1.5 )
+texture = ExtResource( 1 )
+centered = false
+
+[node name="Player" parent="." instance=ExtResource( 2 )]
+position = Vector2( 375, 675 )
+scale = Vector2( 1.5, 1.5 )
+
+[node name="DUMMY_sheepstand" type="Sprite" parent="."]
+position = Vector2( 1125, 175 )
+scale = Vector2( 1.5, 1.5 )
+texture = ExtResource( 3 )

@@ -1,0 +1,210 @@
+[gd_scene load_steps=44 format=2]
+
+[ext_resource path="res://Characters/DUMMY_flub.png" type="Texture" id=1]
+[ext_resource path="res://scripts/Player.gd" type="Script" id=2]
+
+[sub_resource type="CapsuleShape2D" id=1]
+radius = 12.4528
+height = 48.6205
+
+[sub_resource type="Animation" id=2]
+resource_name = "walk_back"
+length = 1.5
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.4, 0.8, 1.2 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 1,
+"values": [ 1, 5, 9, 5 ]
+}
+
+[sub_resource type="Animation" id=3]
+resource_name = "walk_forward"
+length = 1.5
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.4, 0.8, 1.2 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 1,
+"values": [ 0, 4, 8, 4 ]
+}
+
+[sub_resource type="Animation" id=4]
+length = 1.5
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.4, 0.8, 1.2 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 1,
+"values": [ 3, 7, 11, 7 ]
+}
+
+[sub_resource type="Animation" id=5]
+resource_name = "walk_right"
+length = 1.5
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.4, 0.8, 1.1 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 1,
+"values": [ 2, 6, 10, 6 ]
+}
+
+[sub_resource type="AnimationNodeAnimation" id=6]
+animation = "walk_back"
+
+[sub_resource type="AnimationNodeAnimation" id=7]
+animation = "walk_forward"
+
+[sub_resource type="AnimationNodeAnimation" id=8]
+animation = "walk_left"
+
+[sub_resource type="AnimationNodeAnimation" id=9]
+animation = "walk_right"
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=10]
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=11]
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=12]
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=13]
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=14]
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=15]
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=16]
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=17]
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=18]
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=19]
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=20]
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=21]
+
+[sub_resource type="AnimationNodeStateMachine" id=22]
+states/walk_back/node = SubResource( 6 )
+states/walk_back/position = Vector2( 489, 36 )
+states/walk_forward/node = SubResource( 7 )
+states/walk_forward/position = Vector2( 499, 210 )
+states/walk_left/node = SubResource( 8 )
+states/walk_left/position = Vector2( 228, 118 )
+states/walk_right/node = SubResource( 9 )
+states/walk_right/position = Vector2( 790, 118 )
+transitions = [ "walk_left", "walk_right", SubResource( 10 ), "walk_right", "walk_left", SubResource( 11 ), "walk_left", "walk_back", SubResource( 12 ), "walk_back", "walk_left", SubResource( 13 ), "walk_left", "walk_forward", SubResource( 14 ), "walk_forward", "walk_right", SubResource( 15 ), "walk_right", "walk_back", SubResource( 16 ), "walk_back", "walk_right", SubResource( 17 ), "walk_right", "walk_forward", SubResource( 18 ), "walk_forward", "walk_left", SubResource( 19 ), "walk_back", "walk_forward", SubResource( 20 ), "walk_forward", "walk_back", SubResource( 21 ) ]
+
+[sub_resource type="AnimationNodeAnimation" id=23]
+animation = "walk_back"
+
+[sub_resource type="AnimationNodeAnimation" id=24]
+animation = "walk_forward"
+
+[sub_resource type="AnimationNodeAnimation" id=25]
+animation = "walk_left"
+
+[sub_resource type="AnimationNodeAnimation" id=26]
+animation = "walk_right"
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=27]
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=28]
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=29]
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=30]
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=31]
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=32]
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=33]
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=34]
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=35]
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=36]
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=37]
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=38]
+
+[sub_resource type="AnimationNodeStateMachine" id=39]
+states/StateMachine/node = SubResource( 22 )
+states/StateMachine/position = Vector2( 141, 189 )
+states/walk_back/node = SubResource( 23 )
+states/walk_back/position = Vector2( 581, 42 )
+states/walk_forward/node = SubResource( 24 )
+states/walk_forward/position = Vector2( 566, 206 )
+states/walk_left/node = SubResource( 25 )
+states/walk_left/position = Vector2( 356, 115 )
+states/walk_right/node = SubResource( 26 )
+states/walk_right/position = Vector2( 938, 105 )
+transitions = [ "walk_back", "walk_forward", SubResource( 27 ), "walk_left", "walk_back", SubResource( 28 ), "walk_forward", "walk_back", SubResource( 29 ), "walk_right", "walk_left", SubResource( 30 ), "walk_right", "walk_forward", SubResource( 31 ), "walk_back", "walk_left", SubResource( 32 ), "walk_left", "walk_forward", SubResource( 33 ), "walk_back", "walk_right", SubResource( 34 ), "walk_right", "walk_back", SubResource( 35 ), "walk_left", "walk_right", SubResource( 36 ), "walk_forward", "walk_left", SubResource( 37 ), "walk_forward", "walk_right", SubResource( 38 ) ]
+start_node = "StateMachine"
+
+[sub_resource type="AnimationNodeStateMachinePlayback" id=40]
+
+[sub_resource type="AnimationNodeStateMachinePlayback" id=41]
+
+[node name="Player" type="KinematicBody2D"]
+script = ExtResource( 2 )
+
+[node name="Sprite" type="Sprite" parent="."]
+position = Vector2( -1.47977, -72.7409 )
+texture = ExtResource( 1 )
+vframes = 3
+hframes = 4
+frame = 1
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+visible = false
+position = Vector2( 217.55, 443.65 )
+rotation = 1.56251
+shape = SubResource( 1 )
+
+[node name="RayCast2D" type="RayCast2D" parent="."]
+position = Vector2( 0, 1 )
+enabled = true
+cast_to = Vector2( 0, 49.991 )
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+anims/walk_back = SubResource( 2 )
+anims/walk_forward = SubResource( 3 )
+anims/walk_left = SubResource( 4 )
+anims/walk_right = SubResource( 5 )
+
+[node name="AnimationTree" type="AnimationTree" parent="."]
+tree_root = SubResource( 39 )
+anim_player = NodePath("../AnimationPlayer")
+active = true
+parameters/playback = SubResource( 40 )
+parameters/StateMachine/playback = SubResource( 41 )
