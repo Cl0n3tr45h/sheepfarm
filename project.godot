@@ -19,6 +19,11 @@ config/name="SheepFarm"
 run/main_scene="res://Scenes/DUMMY_Gasstation.tscn"
 config/icon="res://icon.png"
 
+[autoload]
+
+SceneChange="*res://Scenes/SceneChange.tscn"
+Exit="*res://Scenes/Exit.tscn"
+
 [display]
 
 window/size/width=800

@@ -1,0 +1,84 @@
+{
+    "title": "Djinn_Dialogue_1",
+    "data": {
+        "stitches": {
+            "whelpTheCarsBust": {
+                "content": [
+                    "Whelp, the car's busted alright... Can you check the station if they sell any parts?",
+                    {
+                        "option": "Do you know Fabi is flirting with the cashier...?",
+                        "linkPath": "ohIiHopeFabisHav",
+                        "ifConditions": [
+                            {
+                                "ifCondition": "saw fabi flirting"
+                            }
+                        ],
+                        "notIfConditions": null
+                    },
+                    {
+                        "option": "I'll do my best",
+                        "linkPath": "thanksIThinkFabi",
+                        "ifConditions": null,
+                        "notIfConditions": null
+                    },
+                    {
+                        "pageNum": 1
+                    },
+                    {
+                        "pageLabel": " Djinn_start"
+                    }
+                ]
+            },
+            "ohIiHopeFabisHav": {
+                "content": [
+                    "Oh? I-i hope Fabi's having fun!",
+                    {
+                        "option": "D-doesn't that upset you? He's your boyfriend.",
+                        "linkPath": "noNotReallyWereP",
+                        "ifConditions": null,
+                        "notIfConditions": null
+                    }
+                ]
+            },
+            "thanksIThinkFabi": {
+                "content": [
+                    "Thanks! I think Fabi went ahead already, too"
+                ]
+            },
+            "noNotReallyWereP": {
+                "content": [
+                    "No, not really. We're poly. ",
+                    {
+                        "divert": "itsNotLikeHesFul"
+                    }
+                ]
+            },
+            "itsNotLikeHesFul": {
+                "content": [
+                    "It's not like... he's full-on making out with them, right? I'm sure if he's... further interested he'll introduce us",
+                    {
+                        "option": "I guess so.",
+                        "linkPath": "canYouPleaseGetT",
+                        "ifConditions": null,
+                        "notIfConditions": null
+                    }
+                ]
+            },
+            "canYouPleaseGetT": {
+                "content": [
+                    "Can you please get the car parts now?"
+                ]
+            }
+        },
+        "initial": "whelpTheCarsBust",
+        "optionMirroring": true,
+        "allowCheckpoints": false,
+        "editorData": {
+            "playPoint": "whelpTheCarsBust",
+            "libraryVisible": false,
+            "authorName": "Sheepfarm",
+            "textSize": 0
+        }
+    },
+    "url_key": 13929
+}

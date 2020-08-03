@@ -1,7 +1,8 @@
-[gd_scene load_steps=13 format=2]
+[gd_scene load_steps=19 format=2]
 
-[ext_resource path="res://Player.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Scenes/Player.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Backgrounds/DUMMY_Gasstation.png" type="Texture" id=2]
+[ext_resource path="res://Scenes/Exit.tscn" type="PackedScene" id=3]
 [ext_resource path="res://Assetts/DUMMY_counter.png" type="Texture" id=4]
 [ext_resource path="res://Assetts/DUMMY_fabit.png" type="Texture" id=5]
 [ext_resource path="res://Assetts/DUMMY_postcardstand.png" type="Texture" id=6]
@@ -9,18 +10,32 @@
 [ext_resource path="res://Assetts/DUMMY_freezer.png" type="Texture" id=8]
 [ext_resource path="res://Assetts/DUMMY_aisle.png" type="Texture" id=9]
 
-[sub_resource type="RectangleShape2D" id=1]
+[sub_resource type="RectangleShape2D" id=2]
 extents = Vector2( 151.778, 25 )
 
-[sub_resource type="RectangleShape2D" id=2]
+[sub_resource type="RectangleShape2D" id=3]
 extents = Vector2( 10.1508, 4.92126 )
 
-[sub_resource type="RectangleShape2D" id=3]
+[sub_resource type="RectangleShape2D" id=4]
+extents = Vector2( 25, 25 )
+
+[sub_resource type="RectangleShape2D" id=5]
+extents = Vector2( 50, 75 )
+
+[sub_resource type="RectangleShape2D" id=6]
 extents = Vector2( 100, 175 )
 
-[sub_resource type="CapsuleShape2D" id=4]
-radius = 25.4501
-height = 38.5998
+[sub_resource type="RectangleShape2D" id=7]
+extents = Vector2( 4.25, 50 )
+
+[sub_resource type="RectangleShape2D" id=8]
+extents = Vector2( 0.75, 250 )
+
+[sub_resource type="RectangleShape2D" id=9]
+extents = Vector2( 4.25, 50 )
+
+[sub_resource type="RectangleShape2D" id=10]
+extents = Vector2( 1.25, 275 )
 
 [node name="Gasstation" type="Node2D"]
 
@@ -31,59 +46,68 @@ centered = false
 [node name="YSort" type="YSort" parent="."]
 
 [node name="freezer" type="StaticBody2D" parent="YSort"]
-position = Vector2( 550, 350 )
+position = Vector2( 475, 50 )
 
 [node name="Sprite" type="Sprite" parent="YSort/freezer"]
-position = Vector2( -78.5175, -342.95 )
 texture = ExtResource( 8 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="YSort/freezer"]
-position = Vector2( -75, -325 )
 scale = Vector2( 1.153, 1 )
-shape = SubResource( 1 )
+shape = SubResource( 2 )
 
 [node name="aisle" type="StaticBody2D" parent="YSort"]
+position = Vector2( 500, 225 )
 
 [node name="Sprite" type="Sprite" parent="YSort/aisle"]
-position = Vector2( 507.479, 204.986 )
+position = Vector2( 0, -25 )
 texture = ExtResource( 9 )
 
 [node name="Sprite2" type="Sprite" parent="YSort/aisle"]
-position = Vector2( 307.753, 228.333 )
+position = Vector2( -200, 0 )
 texture = ExtResource( 6 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="YSort/aisle"]
-position = Vector2( 475, 275 )
+position = Vector2( -50, 75.0001 )
 scale = Vector2( 17.24, 5.08 )
-shape = SubResource( 2 )
-
-[node name="counter" type="StaticBody2D" parent="YSort"]
-
-[node name="Sprite" type="Sprite" parent="YSort/counter"]
-position = Vector2( 74.2383, 238.227 )
-texture = ExtResource( 4 )
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="YSort/counter"]
-position = Vector2( 50, 250 )
 shape = SubResource( 3 )
 
-[node name="fabi" type="StaticBody2D" parent="YSort"]
+[node name="fabi" type="StaticBody2D" parent="YSort" groups=[
+"interactables",
+]]
+position = Vector2( 175, 250 )
 
 [node name="Sprite" type="Sprite" parent="YSort/fabi"]
-position = Vector2( 185.25, 138.7 )
+position = Vector2( 0, -100 )
 texture = ExtResource( 5 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="YSort/fabi"]
-position = Vector2( 174.8, 203.3 )
+position = Vector2( 0, -25 )
 shape = SubResource( 4 )
 
+[node name="Area2D" type="Area2D" parent="YSort/fabi"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="YSort/fabi/Area2D"]
+self_modulate = Color( 0.262745, 0.905882, 0.105882, 1 )
+position = Vector2( 25, -25 )
+shape = SubResource( 5 )
+
+[node name="counter" type="StaticBody2D" parent="YSort"]
+position = Vector2( 75, 225 )
+
+[node name="Sprite" type="Sprite" parent="YSort/counter"]
+texture = ExtResource( 4 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="YSort/counter"]
+position = Vector2( -25, 0 )
+shape = SubResource( 6 )
+
 [node name="Player" parent="YSort" instance=ExtResource( 1 )]
-position = Vector2( 250, 450 )
+position = Vector2( 225, 400 )
 
 [node name="Camera2D" type="Camera2D" parent="YSort/Player"]
-position = Vector2( 0, -100 )
-rotation = 3.14159
+position = Vector2( 0, -75 )
 scale = Vector2( 1.33326, 1.87936 )
+rotating = true
 current = true
 zoom = Vector2( 0.885, 0.89 )
 
@@ -97,3 +121,28 @@ scale = Vector2( 0.666667, 0.666667 )
 cell_size = Vector2( 50, 50 )
 cell_y_sort = true
 format = 1
+
+[node name="Border" type="StaticBody2D" parent="."]
+visible = false
+position = Vector2( 400, -50 )
+scale = Vector2( 100, 1 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Border"]
+shape = SubResource( 7 )
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Border"]
+position = Vector2( 4.75, 275 )
+shape = SubResource( 8 )
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="Border"]
+position = Vector2( -4.76837e-07, 550 )
+shape = SubResource( 9 )
+
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="Border"]
+position = Vector2( -5.24, 300 )
+shape = SubResource( 10 )
+
+[node name="Exit" parent="." instance=ExtResource( 3 )]
+position = Vector2( 225, 425 )
+scale = Vector2( 2.145, 1 )
+path = "res://Scenes/DUMMY_GasstationOutside.tscn"

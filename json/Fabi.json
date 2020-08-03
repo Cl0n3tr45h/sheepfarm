@@ -1,0 +1,73 @@
+{
+    "title": "Fabi_Dialogue_1",
+    "data": {
+        "stitches": {
+            "soThereIWasStuck": {
+                "content": [
+                    "So there I was stuck in the window- in my hand *still* the burning- Oh-",
+                    {
+                        "divert": "heyFlubiusIsTheC"
+                    },
+                    {
+                        "pageNum": 1
+                    },
+                    {
+                        "pageLabel": " FabiStart"
+                    }
+                ]
+            },
+            "heyFlubiusIsTheC": {
+                "content": [
+                    "Hey Flubius, is the car working again?",
+                    {
+                        "option": "No. (Exit Conversation)",
+                        "linkPath": "wellHmuOnceItDoe",
+                        "ifConditions": null,
+                        "notIfConditions": null
+                    },
+                    {
+                        "option": "I'm trying to find the correct parts...",
+                        "linkPath": "haveYouCheckedOu",
+                        "ifConditions": null,
+                        "notIfConditions": null
+                    }
+                ]
+            },
+            "wellHmuOnceItDoe": {
+                "content": [
+                    "Well hmu once it does~!",
+                    {
+                        "flagName": "saw fabi flirting"
+                    },
+                    {
+                        "pageNum": -1
+                    }
+                ]
+            },
+            "haveYouCheckedOu": {
+                "content": [
+                    "Have you checked out the weird cutout ad back there? Maybe it has what we need",
+                    {
+                        "runOn": true
+                    },
+                    {
+                        "flagName": "saw fabi flirting"
+                    },
+                    {
+                        "pageNum": -1
+                    }
+                ]
+            }
+        },
+        "initial": "soThereIWasStuck",
+        "optionMirroring": true,
+        "allowCheckpoints": false,
+        "editorData": {
+            "playPoint": "heyFlubiusIsTheC",
+            "libraryVisible": false,
+            "authorName": "SheepFarm",
+            "textSize": 0
+        }
+    },
+    "url_key": 13928
+}

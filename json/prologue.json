@@ -1,0 +1,62 @@
+[
+	{
+		"title": "FabiStart",
+		"tags": "",
+		"body": "Fabi: <<mood flirting>> So there I was; stuck in the window- in my hand *still* the burning-- <<mood surprised>> \nFabi: <<mood relaxed>> Hey Flubius is the car working again? <<set $saw_fabi_flirting to true>> [[No. |Exit]] [[I'm trying to find the correct parts...|Carparts]]",
+		"position": {
+			"x": -683,
+			"y": -354
+		},
+		"colorID": 8
+	},
+	{
+		"title": "Exit",
+		"tags": "",
+		"body": "Fabi: <<mood smiling>> Well tell me once it does!",
+		"position": {
+			"x": -293,
+			"y": -514
+		},
+		"colorID": 0
+	},
+	{
+		"title": "Carparts",
+		"tags": "",
+		"body": "Fabi: Have you checked out the weird cutout ad back there? Maybe it has what we need",
+		"position": {
+			"x": -84,
+			"y": -335
+		},
+		"colorID": 0
+	},
+	{
+		"title": "DjinnStart",
+		"tags": "",
+		"body": "<<if $spoken_to_Djinn is false>>\n    Djinn: <<mood :\\>>Whelp.. The car's busted... Can you check the station if they sell any parts? <<set $spoken_to_Djinn to true>>\n    Flubius:Yea I'll take a look \n<<if $spoken_to_Djinn is true>>\n    Djinn: <<mood :\\>>Did you get the parts yet? \n    Flubius: No.\n    <<if $saw_fabi_flirting is true>>\n    [[Do you know that Fabi is flirting with the cashier? |Flirt]]\n<<if carparts in inventory (LOOK UP CORRECT EXPRESSION)>>\n[[U-uh-- A-about the p-parts... |Cont]]",
+		"position": {
+			"x": -687,
+			"y": -19
+		},
+		"colorID": 4
+	},
+	{
+		"title": "Flirt",
+		"tags": "",
+		"body": "Djinn: Oh? I-i hope Fabi's having fun!\nFlubius: Doesn't that upset you? He's your boyfriend, I thought.\nDjinn: No, it doesn't... We're poly.\nDjinn: It's not like...he's full on making out with them, right? I'm sure if he's... further interested he'll introduce us.\nFlubius: I guess so.\nDjinn: ...Can you please get the car parts now?",
+		"position": {
+			"x": -377,
+			"y": 158
+		},
+		"colorID": 0
+	},
+	{
+		"title": "Cont",
+		"tags": "",
+		"body": "Describe scene with Vev and Fab coming outside and y'k now th rest",
+		"position": {
+			"x": -361,
+			"y": -152
+		},
+		"colorID": 0
+	}
+]

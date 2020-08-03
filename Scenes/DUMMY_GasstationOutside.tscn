@@ -1,0 +1,21 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://Scenes/Player.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Scenes/Exit.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Backgrounds/DUMMY_GasstationOutside.png" type="Texture" id=3]
+
+[node name="Node2D" type="Node2D"]
+
+[node name="DUMMY_GasstationOutside" type="Sprite" parent="."]
+position = Vector2( 400, 225 )
+scale = Vector2( 0.5, 0.5 )
+texture = ExtResource( 3 )
+
+[node name="Player" parent="." instance=ExtResource( 1 )]
+position = Vector2( 325, 227 )
+scale = Vector2( 0.75, 0.75 )
+
+[node name="Exit" parent="." instance=ExtResource( 2 )]
+position = Vector2( 337, 158 )
+scale = Vector2( 3.03908, 0.992557 )
+path = "res://Scenes/DUMMY_Gasstation.tscn"

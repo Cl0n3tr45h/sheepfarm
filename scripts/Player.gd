@@ -2,9 +2,10 @@ extends KinematicBody2D
 
 var velocity = Vector2.ZERO
 var input_vector = Vector2()
-
 var last_position = Vector2()
 var target_position = Vector2()
+
+signal moved
 
 const ACCELERATION = 500
 const MAX_SPEED = 200
@@ -19,7 +20,8 @@ onready var animationState = animationTree.get("parameters/playback")
 # Called when the node enters the scene tree for the first time.
 
 func _ready():
-	position = position.snapped(Vector2(TILESIZE,TILESIZE))
+# warning-ignore:integer_division
+	position = position.snapped(Vector2(TILESIZE,TILESIZE)) - Vector2(TILESIZE/2.0, TILESIZE/2.0)
 	last_position = position
 	target_position = position
 
@@ -30,13 +32,17 @@ func _process(delta):
 		position = last_position
 		target_position = last_position
 	else:
-	
 		position += MAX_SPEED * input_vector * delta
+		
+		
+		var walked_distance = position.distance_to(last_position)
+		ray.cast_to = input_vector * (TILESIZE - walked_distance)
 		
 		if position.distance_to(last_position) >= TILESIZE:
 			position = target_position
+		emit_signal("moved")
 		
-		#IDLE
+	#IDLE
 	if position == target_position:
 		get_input_vector()
 		last_position = position
@@ -64,8 +70,7 @@ func get_input_vector():
 	if input_vector.y < 0:
 		animationState.travel("walk_backward")
 	
-	if input_vector != Vector2.ZERO: #ray cast to face where body's going
-		ray.cast_to = input_vector * TILESIZE 
+	ray.cast_to = input_vector * TILESIZE
 
 
 
