@@ -40,7 +40,7 @@ func _process(delta):
 		
 		if position.distance_to(last_position) >= TILESIZE:
 			position = target_position
-		emit_signal("moved")
+			emit_signal("moved")
 		
 	#IDLE
 	if position == target_position:
