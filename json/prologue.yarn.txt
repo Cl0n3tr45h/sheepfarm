@@ -1,0 +1,60 @@
+title: FabiStart
+tags: 
+colorID: 8
+position: -687,-356
+---
+Fabi: <<mood flirting>> So there I was; stuck in the window- in my hand *still* the burning-- <<mood surprised>> 
+Fabi: <<mood relaxed>> Hey Flubius is the car working again? 
+[[No. |Exit]] 
+[[I'm trying to find the correct parts...|Carparts]]
+$saw_fabi_flirting = true
+===
+title: Exit
+tags: 
+colorID: 0
+position: -295,-515
+---
+Fabi: <<mood smiling>> Well tell me once it does!
+===
+title: Carparts
+tags: 
+colorID: 0
+position: -85,-335
+---
+Fabi: Have you checked out the weird cutout ad back there? Maybe it has what we need
+===
+title: DjinnStart
+tags: 
+colorID: 4
+position: -689,-20
+---
+<<if $spoken_to_Djinn is false>>
+    Djinn: <<mood :\>>Whelp.. The car's busted... Can you check the station if they sell any parts? <<set $spoken_to_Djinn to true>>
+    Flubius:Yea I'll take a look 
+<<if $spoken_to_Djinn is true>>
+    Djinn: <<mood :\>>Did you get the parts yet? 
+    Flubius: No.
+    <<if $saw_fabi_flirting is true>>
+    [[Do you know that Fabi is flirting with the cashier? |Flirt]]
+<<if carparts in inventory (LOOK UP CORRECT EXPRESSION)>>
+[[U-uh-- A-about the p-parts... |Cont]]
+===
+title: Flirt
+tags: 
+colorID: 0
+position: -377,158
+---
+Djinn: Oh? I-i hope Fabi's having fun!
+Flubius: Doesn't that upset you? He's your boyfriend, I thought.
+Djinn: No, it doesn't... We're poly.
+Djinn: It's not like...he's full on making out with them, right? I'm sure if he's... further interested he'll introduce us.
+Flubius: I guess so.
+Djinn: ...Can you please get the car parts now?
+===
+title: Cont
+tags: 
+colorID: 0
+position: -361,-152
+---
+Describe scene with Vev and Fab coming outside and y'k now th rest
+===
