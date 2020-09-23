@@ -1,4 +1,4 @@
-extends "res://yarn/yarn-importer.gd"
+extends "yarn-importer.gd"
 
 # An example extended class of "yarn-importer"
 #
@@ -20,11 +20,12 @@ func connect_scene(parent, scene_dialog, scene_choices):
 	choices = scene_choices
 
 func yarn_text_variables(text):
-	if text.find('$') != -1:
-		text = text.replace('$PlayerFirst', game.data['first'])
-		text = text.replace('$PlayerLast', game.data['last'])
-		text = text.replace('$PlayerFull', game.data['full'])
-	return text
+	#if text.find('$') != -1:
+	#	text = text.replace('$PlayerFirst', game.data['first'])
+	#	text = text.replace('$PlayerLast', game.data['last'])
+	#	text = text.replace('$PlayerFull', game.data['full'])
+	#return text
+	pass
 
 func story_setting(setting, value):
 	pass
@@ -42,7 +43,8 @@ func action(text):
 	pass
 	
 func yarn_custom_logic(to):
-	if not to in game.counters:
-		game.counters[to] = 0
-	game.counters[to] = game.counters[to] + 1
-	scene.set_visit_label("STATS: You've visited '"+to+"' "+str(game.counters[to])+" times.")
+	#if not to in game.counters:
+	#	game.counters[to] = 0
+	#game.counters[to] = game.counters[to] + 1
+	#scene.set_visit_label("STATS: You've visited '"+to+"' "+str(game.counters[to])+" times.")
+	pass

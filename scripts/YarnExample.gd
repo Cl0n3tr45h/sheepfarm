@@ -1,5 +1,7 @@
 extends Control
 
+export (String, FILE, "*.yarn.txt") var path
+
 onready var dialog = $PageVBox/PageHBox/DialogVBox/DialogScroll/Dialog/Margin/VBox
 onready var choices = $PageVBox/PageHBox/ChoicesVBox/Choices/Margin/VBox
 
@@ -9,7 +11,7 @@ func _ready():
 	var yarn_gd = load('res://my-yarn.gd')
 	yarn = yarn_gd.new()
 	yarn.connect_scene(self, dialog, choices)
-	yarn.spin_yarn('res://data/scene-example.yarn.txt')
+	yarn.spin_yarn(path)#('res://data/scene-example.yarn.txt')
 	populate_settings()
 
 func create_dialog(text):
